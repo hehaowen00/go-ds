@@ -1,4 +1,4 @@
-package ring
+package ds
 
 import "errors"
 
@@ -11,7 +11,7 @@ type RingBuffer[T any] struct {
 
 var ErrCapacityInvalid = errors.New("capacity must be > 0")
 
-func New[T any](capacity int) (*RingBuffer[T], error) {
+func NewRingBuffer[T any](capacity int) (*RingBuffer[T], error) {
 	if capacity <= 0 {
 		return nil, ErrCapacityInvalid
 	}

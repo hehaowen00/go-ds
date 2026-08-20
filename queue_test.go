@@ -1,4 +1,4 @@
-package queue
+package ds
 
 import (
 	"math/rand"
@@ -7,7 +7,7 @@ import (
 )
 
 func TestQueue(t *testing.T) {
-	q := New[int]()
+	q := NewQueue[int]()
 	for i := range 10 {
 		q.Enqueue(i)
 	}
@@ -29,7 +29,7 @@ func (i Item) Priority() int64 {
 }
 
 func TestPriorityQueue(t *testing.T) {
-	pq := NewPriority[Item]()
+	pq := NewPriorityQueue[Item]()
 
 	for i := range 10 {
 		n := rand.Intn(10)

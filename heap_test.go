@@ -1,11 +1,11 @@
-package binaryheap
+package ds
 
 import (
 	"testing"
 )
 
 func TestBinaryHeap(t *testing.T) {
-	bh := New(func(a, b int) bool {
+	bh := NewBinaryHeap(func(a, b int) bool {
 		return a < b
 	})
 
@@ -33,7 +33,7 @@ func BenchmarkBinaryHeap(b *testing.B) {
 	b.ResetTimer()
 
 	for range b.N {
-		bh := New(less)
+		bh := NewBinaryHeap(less)
 		for i := range benchSize {
 			bh.Push(i)
 		}
@@ -49,7 +49,7 @@ func BenchmarkBinaryHeapCapacity(b *testing.B) {
 	b.ResetTimer()
 
 	for range b.N {
-		bh := NewCapacity(less, benchSize)
+		bh := NewBinaryHeapCapacity(less, benchSize)
 		for i := range benchSize {
 			bh.Push(i)
 		}

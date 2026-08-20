@@ -1,8 +1,7 @@
-package queue
+package ds
 
-import "github.com/hehaowen00/go-ds/binaryheap"
 
-func New[T any]() *Queue[T] {
+func NewQueue[T any]() *Queue[T] {
 	return &Queue[T]{}
 }
 
@@ -29,16 +28,16 @@ func (q *Queue[T]) Dequeue() (T, bool) {
 	return item, true
 }
 
-func NewPriority[T PriorityItem]() *PriorityQueue[T] {
+func NewPriorityQueue[T PriorityItem]() *PriorityQueue[T] {
 	return &PriorityQueue[T]{
-		heap: binaryheap.New(func(a, b T) bool {
+		heap: NewBinaryHeap(func(a, b T) bool {
 			return a.Priority() < b.Priority()
 		}),
 	}
 }
 
 type PriorityQueue[T PriorityItem] struct {
-	heap *binaryheap.BinaryHeap[T]
+	heap *BinaryHeap[T]
 }
 
 type PriorityItem interface {

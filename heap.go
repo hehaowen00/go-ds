@@ -1,16 +1,21 @@
-package binaryheap
+package ds
+
+import "iter"
 
 // parent := (i - 1) / 2
 // leftChild := (2 * i) + 1
 // rightChild := (2 * i) + 2
 
-func New[T any](lessThan func(a, b T) bool) *BinaryHeap[T] {
+func NewBinaryHeap[T any](lessThan func(a, b T) bool) *BinaryHeap[T] {
 	return &BinaryHeap[T]{
 		lessThan: lessThan,
 	}
 }
 
-func NewCapacity[T any](lessThan func(a, b T) bool, capacity int) *BinaryHeap[T] {
+func NewBinaryHeapCapacity[T any](
+	lessThan func(a, b T) bool,
+	capacity int,
+) *BinaryHeap[T] {
 	return &BinaryHeap[T]{
 		lessThan: lessThan,
 		data:     make([]T, 0, capacity),
@@ -28,6 +33,18 @@ func (bh *BinaryHeap[T]) Len() int {
 
 func (bh *BinaryHeap[T]) Clear() {
 	clear(bh.data)
+}
+
+func (bh *BinaryHeap[T]) Data() []T {
+	return bh.data
+}
+
+func (bh *BinaryHeap[T]) Iter() iter.Seq2[int, T] {
+	return func(yield func(int, T) bool) {
+		for i := range bh.Len() {
+			yield(i, bh.data[i])
+		}
+	}
 }
 
 func (bh *BinaryHeap[T]) Push(item T) {
