@@ -1,9 +1,9 @@
-package ring
+package ds
 
 import "testing"
 
 func TestRing(t *testing.T) {
-	ringBuf, err := New[int](16)
+	ringBuf, err := NewRingBuffer[int](16)
 	if err != nil {
 		t.FailNow()
 	}

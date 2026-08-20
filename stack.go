@@ -1,10 +1,10 @@
-package stack
+package ds
 
 type Stack[T any] struct {
 	data []T
 }
 
-func New[T any]() *Stack[T] {
+func NewStack[T any]() *Stack[T] {
 	return &Stack[T]{}
 }
 
