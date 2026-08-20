@@ -1,6 +1,5 @@
 package ds
 
-
 func NewQueue[T any]() *Queue[T] {
 	return &Queue[T]{}
 }

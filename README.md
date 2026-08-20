@@ -12,7 +12,11 @@ Set of algorithms and data structures implemented in Go.
 
 - [ ] BTree
 
+- [ ] Count Min Sketch
+
 - [ ] Disjoint Set
+
+- [ ] Fenwick Tree
 
 - [ ] Graph (Adjacency List and Matrix)
 
@@ -20,11 +24,17 @@ Set of algorithms and data structures implemented in Go.
 
 - [ ] Linked List / Doubly Linked List
 
+- [ ] LRU Cache
+
 - [x] Queue / Deque
+
+- [x] Priority Queue
 
 - [ ] Radix Trie
 
 - [x] Ring Buffer
+
+- [ ] Rope
 
 - [ ] Prefix Trie
 
@@ -34,22 +44,60 @@ Set of algorithms and data structures implemented in Go.
 
 - [ ] Skip List
 
+- [ ] Splay Tree
+
 - [x] Stack
+
+- [ ] Suffix Array
 
 - [ ] Segment / Interval Tree
 
-- [ ] LRU Cache
-
 - [ ] Union-Find
-
-- [ ] Fenwick Tree
 
 ## Algorithms
 
-- Levenshtein Distance
+- [ ] A\*
 
-- Depth First Search
+- [ ] Aho Corasick
 
-- Breadth First Search
+- [ ] Bellman Ford
 
-- A\*
+- [ ] Binary Search
+
+- [ ] Dijkstra
+
+- [ ] Eytzinger Layout
+
+- [ ] Fiedler Spectral Partitioning
+
+- [ ] Fisher Yates Shuffle
+
+- [ ] Girvan-Newman
+
+- [ ] Heap Sort
+
+- [ ] Knuth Morris Pratt String Searching
+
+- [ ] Label Propagation
+
+- [ ] Leiden Algorithm
+
+- [ ] Levenshtein Distance
+
+- [ ] Longest Common Subsequence
+
+- [ ] Louvain Method
+
+- [ ] Depth First Search
+
+- [ ] Breadth First Search
+
+- [ ] Merge Sort
+
+- [ ] Radix Sort
+
+- [ ] Resevoir Sampling
+
+- [ ] Quick Sort
+
+- [ ] Topological Sort
