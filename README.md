@@ -4,9 +4,13 @@ Set of algorithms and data structures implemented in Go.
 
 ## Data Structures
 
+- [ ] AVL Tree
+
 - [x] Binary Heap
 
 - [ ] Binary Tree
+
+- [ ] BitSet
 
 - [ ] Bloom Filter
 
@@ -22,9 +26,9 @@ Set of algorithms and data structures implemented in Go.
 
 - [ ] HyperLogLog
 
-- [ ] Linked List / Doubly Linked List
+- [x] Linked List / Doubly Linked List
 
-- [ ] LRU Cache
+- [x] LRU Cache
 
 - [x] Queue / Deque
 
@@ -40,7 +44,7 @@ Set of algorithms and data structures implemented in Go.
 
 - [ ] Set
 
-- [ ] Sorted Set
+- [x] Sorted Set
 
 - [ ] Skip List
 

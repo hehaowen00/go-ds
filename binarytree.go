@@ -30,6 +30,24 @@ func (t *BinaryTree[T]) lowerBound(item T) int {
 	return l
 }
 
+func (t *BinaryTree[T]) Exists(item T) bool {
+	if len(t.data) == 0 {
+		return false
+	}
+
+	idx := t.lowerBound(item)
+
+	if idx >= len(t.data) {
+		return false
+	}
+
+	if t.cmp(t.data[idx], item) == 0 {
+		return true
+	}
+
+	return false
+}
+
 func (t *BinaryTree[T]) Insert(item T) {
 	if len(t.data) == 0 {
 		t.data = append(t.data, item)
@@ -49,4 +67,23 @@ func (t *BinaryTree[T]) Insert(item T) {
 	}
 
 	t.data = slices.Insert(t.data, idx, item)
+}
+
+func (t *BinaryTree[T]) Remove(item T) bool {
+	if len(t.data) == 0 {
+		return false
+	}
+
+	idx := t.lowerBound(item)
+
+	if idx >= len(t.data) {
+		return false
+	}
+
+	if t.cmp(t.data[idx], item) == 0 {
+		t.data = append(t.data[:idx], t.data[idx+1:]...)
+		return true
+	}
+
+	return false
 }
