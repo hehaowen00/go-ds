@@ -33,6 +33,7 @@ func (bh *BinaryHeap[T]) Len() int {
 
 func (bh *BinaryHeap[T]) Clear() {
 	clear(bh.data)
+	bh.data = bh.data[:0]
 }
 
 func (bh *BinaryHeap[T]) Data() []T {
@@ -42,7 +43,9 @@ func (bh *BinaryHeap[T]) Data() []T {
 func (bh *BinaryHeap[T]) Iter() iter.Seq2[int, T] {
 	return func(yield func(int, T) bool) {
 		for i := range bh.Len() {
-			yield(i, bh.data[i])
+			if !yield(i, bh.data[i]) {
+				break
+			}
 		}
 	}
 }

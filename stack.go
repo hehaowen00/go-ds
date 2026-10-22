@@ -20,6 +20,7 @@ func (s *Stack[T]) Len() int {
 
 func (s *Stack[T]) Clear() {
 	clear(s.data)
+	s.data = s.data[:0]
 }
 
 func (s *Stack[T]) Push(v T) {
